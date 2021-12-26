@@ -1,5 +1,5 @@
-import React from 'react';
 import './App.scss';
+import Button from '@mui/material/Button';
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
         >
           Learn React
         </a>
+        <Button variant="outlined">Hello world!</Button>
       </header>
     </div>
   );
