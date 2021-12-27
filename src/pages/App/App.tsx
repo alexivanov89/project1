@@ -1,15 +1,15 @@
-import './App.scss';
 import Button from '@mui/material/Button';
+import s from './_index.module.scss';
 
-export const App = () => {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className={s.App}>
+      <header className={s.Appheader}>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <a
-          className="App-link"
+          className={s.Applink}
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
@@ -20,4 +20,4 @@ export const App = () => {
       </header>
     </div>
   );
-};
+}
