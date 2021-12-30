@@ -1,6 +1,6 @@
 import { FC, lazy, Suspense } from 'react';
-import { Route, Switch, RouteProps, Router } from 'react-router-dom';
-import { ErrorModal } from '../components/ErrorModal';
+import { Route, Switch, RouteProps, Router, Redirect } from 'react-router-dom';
+import { ErrorModal } from '../components/ErrorModal/ErrorModal';
 import { history } from '../store';
 const App = lazy(() => import('../pages/App/App'));
 
@@ -12,6 +12,7 @@ export const MainRouter: FC<IMainRouterProps> = () => {
       <Suspense fallback={<div>Загрузка...</div>}>
         <Switch>
           <Route exact path="/" component={App} />
+          <Redirect to="/" />
         </Switch>
         <ErrorModal />
       </Suspense>
