@@ -1,4 +1,6 @@
 import Button from '@mui/material/Button';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useClick } from '../../hooks/useClick';
 import { useConfirm } from '../../hooks/useConfirm';
 import { useFullscreen } from '../../hooks/useFullscreen';
@@ -7,6 +9,7 @@ import { useNetwork } from '../../hooks/useNetwork';
 import { usePreventLeave } from '../../hooks/usePreventLeave';
 import { useScroll } from '../../hooks/useScroll';
 import { useTitle } from '../../hooks/useTitle';
+import { fetchPostsAsync } from '../../store/reducers/postsReducer';
 import s from './_index.module.scss';
 
 export default function App() {
@@ -21,6 +24,12 @@ export default function App() {
   useNetwork(handleChange);
   const { x, y } = useScroll();
   const { element, triggerFull, exitFull } = useFullscreen(() => console.log('test'));
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchPostsAsync());
+  }, [dispatch]);
 
   return (
     <div className={s.App}>

@@ -4,7 +4,7 @@ import { store } from '../store';
 import { SetError } from '../store/action/creator/error';
 
 const axiosInstance = axios.create({
-  baseURL: URL_PREFIX,
+  baseURL: 'https://jsonplaceholder.typicode.com', // URL_PREFIX
   responseType: 'json',
 });
 
