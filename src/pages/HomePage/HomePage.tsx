@@ -1,3 +1,4 @@
+import { CssBaseline } from '@mui/material';
 import Button from '@mui/material/Button';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -10,9 +11,9 @@ import { usePreventLeave } from '../../hooks/usePreventLeave';
 import { useScroll } from '../../hooks/useScroll';
 import { useTitle } from '../../hooks/useTitle';
 import { fetchPostsAsync } from '../../store/reducers/postsReducer';
-import s from './_index.module.scss';
+import s from './index.module.scss';
 
-export default function App() {
+export default function HomePage() {
   const titleUpdater = useTitle('Загрузка...');
   setTimeout(() => titleUpdater('Главная страница'), 3000);
   const { enablePrevent, disablePrevent } = usePreventLeave();
@@ -33,6 +34,7 @@ export default function App() {
 
   return (
     <div className={s.App}>
+      <CssBaseline />
       <header className={s.Appheader}>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
