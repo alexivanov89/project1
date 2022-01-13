@@ -1,11 +1,11 @@
-import { Dialog, DialogContent, DialogTitle, IconButton, Theme, Typography } from '@mui/material';
+import { Dialog, DialogContent, DialogTitle, IconButton, Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import makeStyles from '@mui/styles/makeStyles';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { SetError } from '../../store/action/creator';
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles((theme) => ({
   dialog: {
     '& .MuiDialog-paper': {
       borderRadius: 12,
@@ -36,7 +36,7 @@ export const ErrorModal = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const error: string = useTypedSelector(({ error }) => error.value);
+  const error = useTypedSelector(({ error }) => error.value);
 
   const handleClose = () => {
     dispatch(SetError(''));
