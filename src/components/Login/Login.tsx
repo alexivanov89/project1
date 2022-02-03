@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { styled, useTheme } from '@mui/material/styles';
 import { Card, Stack, Link, Container, Typography, useMediaQuery } from '@mui/material';
@@ -32,7 +32,7 @@ const ContentStyle = styled('div')(({ theme }) => ({
 const Login: FC = () => {
   const theme = useTheme();
   const matchesUpMd = useMediaQuery(theme.breakpoints.up('md'));
-
+  console.log(theme);
   return (
     <RootStyle>
       {matchesUpMd && (

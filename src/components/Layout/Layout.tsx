@@ -1,5 +1,4 @@
 import { ReactNode, useState } from 'react';
-import { CssBaseline } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import { Header } from './Header';
@@ -49,7 +48,6 @@ const Layout: React.FC<Props> = ({ children }) => {
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
       <Header open={open} onClick={handleToggle} />
       <SideBar open={open} onClick={handleToggle} />
       <Main open={open}>

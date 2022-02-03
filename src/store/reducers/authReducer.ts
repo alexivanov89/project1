@@ -4,7 +4,7 @@ import { setAuth, setError, setLoading, setUser } from '../action/creator';
 import { ItemReducer } from './itemReducer';
 
 const initialState = {
-  isAuth: false,
+  isAuth: true,
   user: {} as IUser,
   isLoading: false,
   error: '',
