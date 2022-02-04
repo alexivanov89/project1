@@ -1,9 +1,8 @@
 import { Dialog, DialogContent, DialogTitle, IconButton, Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import makeStyles from '@mui/styles/makeStyles';
-import { useDispatch } from 'react-redux';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { SetError } from '../../store/action/creator';
+import { useAppDispatch, useAppSelector } from '../../store';
+import { selectError, setError } from '../../store/reducers/ErrorSlice';
 
 const useStyles = makeStyles((theme) => ({
   dialog: {
@@ -34,12 +33,11 @@ const useStyles = makeStyles((theme) => ({
 
 export const ErrorModal = () => {
   const classes = useStyles();
-  const dispatch = useDispatch();
-
-  const error = useTypedSelector(({ error }) => error.value);
+  const dispatch = useAppDispatch();
+  const error = useAppSelector(selectError);
 
   const handleClose = () => {
-    dispatch(SetError(''));
+    dispatch(setError(''));
   };
 
   return (

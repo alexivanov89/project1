@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { URL_PREFIX } from './apiConstants';
 import { store } from '../store';
-import { SetError } from '../store/action/creator/error';
+import { setError } from '../store/reducers/ErrorSlice';
 
 const axiosInstance = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com', // URL_PREFIX
@@ -14,7 +14,7 @@ axiosInstance.interceptors.response.use(
   },
   function (error) {
     if (error.response.status >= 200 && error.response.status < 300)
-      store.dispatch(SetError(error.message));
+      store.dispatch(setError(error.message));
     else {
       return Promise.reject(error);
     }

@@ -17,14 +17,14 @@ import { LoadingButton } from '@mui/lab';
 import { RouteNames } from '../../router/routes';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useDispatch } from 'react-redux';
-import { login } from '../../store/reducers/authReducer';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { useAppSelector } from '../../store';
+import { login } from '../../store/reducers/AuthSlice';
 
 const LoginForm = () => {
   const history = useHistory();
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
-  const { error, isLoading } = useTypedSelector(({ auth }) => auth);
+  const { error, isLoading } = useAppSelector(({ auth }) => auth);
 
   const LoginSchema = Yup.object().shape({
     email: Yup.string().email('должен быть email address').required('Email обязательное поле'),
@@ -39,7 +39,7 @@ const LoginForm = () => {
     },
     validationSchema: LoginSchema,
     onSubmit: () => {
-      dispatch(login('test@test.com', '12345'));
+      dispatch(login('test@test.com', '123456'));
     },
   });
 
@@ -62,7 +62,6 @@ const LoginForm = () => {
             error={Boolean(touched.email && errors.email)}
             helperText={touched.email && errors.email}
           />
-
           <TextField
             fullWidth
             autoComplete="current-password"
@@ -89,18 +88,15 @@ const LoginForm = () => {
             </Box>
           )}
         </Stack>
-
         <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ my: 2 }}>
           <FormControlLabel
             control={<Checkbox {...getFieldProps('remember')} checked={values.remember} />}
             label="Запомнить меня"
           />
-
           <Link component={RouterLink} variant="subtitle2" to="#">
             Забыли пароль?
           </Link>
         </Stack>
-
         <LoadingButton fullWidth size="large" type="submit" variant="contained" loading={isLoading}>
           Login
         </LoadingButton>
