@@ -11,6 +11,7 @@
 * **react -helmet,**
 * **style: css-modules + sass(scss) + classnames + material-ui(v5: styled, jss(useStyles, sx props, mixins), emotion),**
 * **eslint + prettier, `webpack-bundle-analyzer(npm run build, after -> npm run analyze)`**
+* **mocks: miragejs.**
 
 ## Getting Started with Create React App
 

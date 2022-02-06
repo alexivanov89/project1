@@ -4,7 +4,7 @@ import { AppDispatch } from '../index';
 import { IUser } from '../../types/auth';
 
 const initialState = {
-  isAuth: false,
+  isAuth: true,
   user: {} as IUser,
   isLoading: false,
   errorAuth: '',

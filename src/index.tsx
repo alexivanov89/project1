@@ -10,6 +10,13 @@ import { HelmetProvider } from 'react-helmet-async';
 import { store } from './store';
 import { ErrorBoundary } from 'react-error-boundary';
 import { Typography } from '@mui/material';
+// import { makeServer } from './Mocks';
+
+// const environment = process.env.NODE_ENV;
+
+// if (environment !== 'production') {
+//   makeServer({ environment });
+// }
 
 ReactDOM.render(
   <React.StrictMode>
