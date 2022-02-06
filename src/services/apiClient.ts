@@ -1,7 +1,6 @@
 import axios from 'axios';
-import { URL_PREFIX } from './apiConstants';
 import { store } from '../store';
-import { setError } from '../store/reducers/ErrorSlice';
+import { setError } from '../store/slices/ErrorSlice';
 
 const axiosInstance = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com', // URL_PREFIX

@@ -1,6 +1,6 @@
 # **Project1**
 
-## **Project1 for learn:**
+## **Project1 for study:**
 
 * **react (v17: functional components, hooks, custom hooks, error boundaries, lazy, suspense),**
 * **typescript,**

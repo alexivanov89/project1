@@ -10,7 +10,7 @@ import { useNetwork } from '../../hooks/useNetwork';
 import { usePreventLeave } from '../../hooks/usePreventLeave';
 import { useScroll } from '../../hooks/useScroll';
 import { useTitle } from '../../hooks/useTitle';
-import { fetchPostsAsync } from '../../store/reducers/PostsSlice';
+import { fetchPostsAsync } from '../../store/slices/PostsSlice';
 import s from './index.module.scss';
 
 export default function HomePage() {

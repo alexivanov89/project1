@@ -18,7 +18,7 @@ import { RouteNames } from '../../router/routes';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../store';
-import { login } from '../../store/reducers/AuthSlice';
+import { login } from '../../store/slices/AuthSlice';
 
 const LoginForm = () => {
   const history = useHistory();

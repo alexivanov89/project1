@@ -2,7 +2,7 @@ import { Dialog, DialogContent, DialogTitle, IconButton, Typography } from '@mui
 import CloseIcon from '@mui/icons-material/Close';
 import makeStyles from '@mui/styles/makeStyles';
 import { useAppDispatch, useAppSelector } from '../../store';
-import { selectError, setError } from '../../store/reducers/ErrorSlice';
+import { selectError, setError } from '../../store/slices/ErrorSlice';
 
 const useStyles = makeStyles((theme) => ({
   dialog: {

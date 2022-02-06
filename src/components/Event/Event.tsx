@@ -1,7 +1,7 @@
 import { Box, Button } from '@mui/material';
 import React, { FC } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store';
-import { setError } from '../../store/reducers/ErrorSlice';
+import { setError } from '../../store/slices/ErrorSlice';
 import { Page } from '../Page/Page';
 import { Scrollbar } from '../Scrollbar/Scrollbar';
 
